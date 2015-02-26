@@ -22,6 +22,36 @@ This project is built, and supported, by the Thinkful Open-source community comp
 
 If you have a bug/feature to report, submit it in an issue. If you would like to contribute to the code base, please make all pull requests to the preview branch.
 
+###Workflow
+
+Contributing to this open source application is different than working on your own repo. There are extra steps. Here is a step by step guide to get you setup.
+
+1. On GitHub go to https://github.com/Thinkful-OpenSource/projectful (make sure you're signed in) and click on the fork button to clone the repo to your account.
+2. Next clone the project to Nitrous or your computer with `git clone https://github.com/<YourUsername>/projectful`
+
+To update your project with the data from the main repo (Get changes from other contributors) run:
+```
+git pull upstream master
+```
+
+To save your changes run the following commands:
+```
+git pull upstream master
+git add -A
+git commit -m "Your commit message (please try to be descriptive, other team members will see this)"
+git push origin master
+```
+
+Now if you are happy with your work and you would like to contribute it to the Thinkful repo:
+
+1. Go to your repo on GitHub
+2. Click on the green button with two circling arrows (the one that wasn't there before)
+3. Make sure you are targeting the `preview` branch (The dropdown towards the top, on the left, should say base: preview)
+4. Review your changes
+5. Press the "Create Pull Request" button
+6. Leave a title and description of your contribution
+7. We will review your changes, if fixes are needed we will comment on the PR.  Once approved, we will merge your changes into the main repo
+
 ####Environment Setup
 As mentioned, this project is built on the MEAN (MongoDB, Express, AngularJS, and NodeJS) stack.  In order to develop locally on your computer, you will need to have [Node](http://howtonode.org/how-to-install-nodejs) installed .  You will also need to download and install [MongoDB](http://www.mongodb.org/downloads). Once you have installed Node and MongoDB, then you can perform the following steps to install the project:
 
@@ -30,6 +60,8 @@ mkdir <folder_name> && cd $_
 git clone git@github.com:<your_username>/projectful.git .
 bower install & npm install
 ```
+
+Skip the first two steps if you've already cloned the repo.
 
 There are quite a bit of dependencies so it will take a bit to install.  Once installed, there are two steps that will need to be done in order to run the project.  In your terminal, you will need to run `mongod` which will start a new MongoDB server instance.  Now, in a new terminal window you can run `grunt serve` which will run through some start up tasks and when complete it should launch your default browser and load http://localhost:9000/.  As you are editing files, the Grunt watch task will detect file changes and run through it's tasks and reload the site for you.
 
