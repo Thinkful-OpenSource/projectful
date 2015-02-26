@@ -15,6 +15,7 @@ Add any possible feature ideas here.
 *  comments
 *  Misc should have portfolios seperated out
 *  students should provide link, and screenshot. Should projects be loaded in an iframe?
+*  GitHub OAuth for getting usernames for comments/liking/etc.
 
 
 ###Contributing
