@@ -23,7 +23,7 @@ This project is built, and supported, by the Thinkful Open-source community comp
 If you have a bug/feature to report, submit it in an issue. If you would like to contribute to the code base, please make all pull requests to the preview branch.
 
 ####Environment Setup
-As mentioned, this project is built on the MEAN (MongoDB, Express, AngularJS, and NodeJS) stack.  In order to develop locally on your computer, you will need to have Node installed (http://howtonode.org/how-to-install-nodejs).  You will also need to download and install [MongoDB](http://www.mongodb.org/downloads). Once you have installed Node and MongoDB, then you can perform the following steps to install the project:
+As mentioned, this project is built on the MEAN (MongoDB, Express, AngularJS, and NodeJS) stack.  In order to develop locally on your computer, you will need to have [Node](http://howtonode.org/how-to-install-nodejs) installed .  You will also need to download and install [MongoDB](http://www.mongodb.org/downloads). Once you have installed Node and MongoDB, then you can perform the following steps to install the project:
 
 ```
 mkdir <folder_name> && cd $_
@@ -34,3 +34,24 @@ bower install & npm install
 There are quite a bit of dependencies so it will take a bit to install.  Once installed, there are two steps that will need to be done in order to run the project.  In your terminal, you will need to run `mongod` which will start a new MongoDB server instance.  Now, in a new terminal window you can run `grunt serve` which will run through some start up tasks and when complete it should launch your default browser and load http://localhost:9000/.  As you are editing files, the Grunt watch task will detect file changes and run through it's tasks and reload the site for you.
 
 Instructions and a link to the c9 box will be added here soon. Students should not have free reign in c9 until they speak with one of the main contributors.
+
+####Development
+Coming Soon...
+
+#####Sever
+The files for the sever live inside the `/server` folder.  To create a new endpoint, you can [install](https://github.com/DaftMonk/generator-angular-fullstack#usage) and use the Yeoman full-stack generator mentioned above.  Follow the [docs](https://github.com/DaftMonk/generator-angular-fullstack#endpoint) to create the endpoint.  Alternatively, you can create the endpoint by hand.  The endpoint should be created in `/server/api/<endpoint_name>` and have a specific file structure.  For example, to create a new endpoint for `courses` then you would create a new directory `/server/api/course` and it would have the following file structure:
+
+```
+index.js // This is where the routes are set up
+course.controller.js // This is where the methods for the endpoint are set up
+course.model.js // The Mongoose model for the database structure
+course.socket.js // Sets up the socket for real time data
+course.spec.js // Test file
+```
+
+For an example of how these files should look, please refer to `/server/api/thing`.  This is a default endpoint that was created when the generator was run.  It's been left in as a reference for future endpoints.
+
+An important thing to note is that any time you change a file in the `server` folder it will tear down and restart the server automatically.  This means that if you were logged into the app you will have lost your session.  Also note, that when the server starts up there is a seed file in `/server/config/seed.js` which seeds the database for development.  This creates some test users and data, and will eventually be set up to seed other data as well so you won't have to create the entities manually.  This also means that when any change is made a server file, any entites that you've created in the app will be deleted and reseeded.
+
+#####Client (User Facing)
+Coming Soon...
