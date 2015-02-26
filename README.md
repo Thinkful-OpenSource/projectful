@@ -30,12 +30,20 @@ Contributing to this open source application is different than working on your o
 1. On GitHub go to https://github.com/Thinkful-OpenSource/projectful (make sure you're signed in) and click on the fork button to clone the repo to your account.
 2. Next clone the project to Nitrous or your computer with `git clone https://github.com/<YourUsername>/projectful`
 
-To update your project with the data from the main repo (Get changes from other contributors) run:
+When working on open-source projects, it's important that you keep your fork in sync with the master to make sure that you have all the latest changes from other contributors.  In order to do so, you'll need to configure a new remote for your fork.  To do so, run this from your project directory:
+
+```
+git remote add upstream https://github.com/Thinkful-OpenSource/projectful.git
+```
+
+Now, all you have to do to sync your project with the data from the main repo (Get changes from other contributors) is run:
+
 ```
 git pull upstream master
 ```
 
 To save your changes run the following commands:
+
 ```
 git pull upstream master
 git add -A
@@ -62,7 +70,7 @@ git clone git@github.com:<your_username>/projectful.git .
 bower install & npm install
 ```
 
-Skip the first two steps if you've already cloned the repo.
+Skip the first two steps if you've already cloned the repo and run `bower install & npm install` from your project directory.
 
 There are quite a bit of dependencies so it will take a bit to install.  Once installed, there are just a couple more steps that will need to be done in order to run the project.  It's common to not include local configuration files in revision control, so the first step is that we will need to create our local environment file.  An example file has been created for you, so you can copy that with the following:
 
