@@ -30,12 +30,20 @@ Contributing to this open source application is different than working on your o
 1. On GitHub go to https://github.com/Thinkful-OpenSource/projectful (make sure you're signed in) and click on the fork button to clone the repo to your account.
 2. Next clone the project to Nitrous or your computer with `git clone https://github.com/<YourUsername>/projectful`
 
-To update your project with the data from the main repo (Get changes from other contributors) run:
+When working on open-source projects, it's important that you keep your fork in sync with the master to make sure that you have all the latest changes from other contributors.  In order to do so, you'll need to configure a new remote for your fork.  To do so, run this from your project directory:
+
+```
+git remote add upstream https://github.com/Thinkful-OpenSource/projectful.git
+```
+
+Now, all you have to do to sync your project with the data from the main repo (Get changes from other contributors) is run:
+
 ```
 git pull upstream master
 ```
 
 To save your changes run the following commands:
+
 ```
 git pull upstream master
 git add -A
@@ -54,7 +62,7 @@ Now if you are happy with your work and you would like to contribute it to the T
 7. We will review your changes, if fixes are needed we will comment on the PR.  Once approved, we will merge your changes into the main repo
 
 ####Environment Setup
-As mentioned, this project is built on the MEAN (MongoDB, Express, AngularJS, and NodeJS) stack.  In order to develop locally on your computer, you will need to have [Node](http://howtonode.org/how-to-install-nodejs) installed .  You will also need to download and install [MongoDB](http://www.mongodb.org/downloads). Once you have installed Node and MongoDB, then you can perform the following steps to install the project:
+As mentioned, this project is built on the MEAN (MongoDB, Express, AngularJS, and NodeJS) stack.  In order to develop locally on your computer, you will need to have [Node](http://howtonode.org/how-to-install-nodejs) installed .  You will also need to download and install [MongoDB](http://www.mongodb.org/downloads). There is one other prerequisite for this project, the project uses [Grunt](http://gruntjs.com/getting-started), so you will need to make sure you have the Grunt CLI installed.  If it's not installed, you can install it with `npm install -g grunt-cli` (Note: You may need to run as admin or sudo).  Once you have installed Grunt CLI, Node and MongoDB, then you can perform the following steps to install the project:
 
 ```
 mkdir <folder_name> && cd $_
@@ -62,9 +70,15 @@ git clone git@github.com:<your_username>/projectful.git .
 bower install & npm install
 ```
 
-Skip the first two steps if you've already cloned the repo.
+Skip the first two steps if you've already cloned the repo and run `bower install & npm install` from your project directory.
 
-There are quite a bit of dependencies so it will take a bit to install.  Once installed, there are two steps that will need to be done in order to run the project.  In your terminal, you will need to run `mongod` which will start a new MongoDB server instance.  Now, in a new terminal window you can run `grunt serve` which will run through some start up tasks and when complete it should launch your default browser and load http://localhost:9000/.  As you are editing files, the Grunt watch task will detect file changes and run through it's tasks and reload the site for you.
+There are quite a bit of dependencies so it will take a bit to install.  Once installed, there are just a couple more steps that will need to be done in order to run the project.  It's common to not include local configuration files in revision control, so the first step is that we will need to create our local environment file.  An example file has been created for you, so you can copy that with the following:
+
+```
+cp server/config/local.env.js-example server/config/local.env.js
+```
+
+Now, in your terminal, you will need to run `mongod` which will start a new MongoDB server instance.  Finally, in a new terminal window you can run `grunt serve` which will run through some start up tasks and when complete it should launch your default browser and load http://localhost:9000/.  As you are editing files, the Grunt watch task will detect file changes and run through it's tasks and reload the site for you.
 
 Instructions and a link to the c9 box will be added here soon. Students should not have free reign in c9 until they speak with one of the main contributors.
 
