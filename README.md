@@ -77,7 +77,7 @@ There are quite a bit of dependencies so it will take a bit to install.  Once in
 ```
 cp server/config/local.env.js-example server/config/local.env.js
 ```
-
+You will also need to have the Sass Ruby Gem installed. If you are on a Mac, run `gem install sass` and it should add that gem to your gem library. This is required to parse the Sass file when Grunt builds the project. 
 Now, in your terminal, you will need to run `mongod` which will start a new MongoDB server instance.  Finally, in a new terminal window you can run `grunt serve` which will run through some start up tasks and when complete it should launch your default browser and load http://localhost:9000/.  As you are editing files, the Grunt watch task will detect file changes and run through it's tasks and reload the site for you.
 
 Instructions and a link to the c9 box will be added here soon. Students should not have free reign in c9 until they speak with one of the main contributors.
