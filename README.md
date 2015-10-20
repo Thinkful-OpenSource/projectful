@@ -71,6 +71,15 @@ Node can be installed locally, or to make things easier if you aren't working on
 
 In order to get the dependencies installed, you will need to run npm install, and wait for that stuff to load. 
 
+#####To Setup In c9
+Sign up for a free account. Once it's setup, create a new workspace. In the creation screen, you should see some fairly straight forward options, including an input to put the link to your forked branch of the GitHub repo. 
+You will want to choose the Node option from the ones listed, then create the new box.
+C9 may give you some boilerplate code instead of the project files. If this happens, delete all the files inside the main folder, and in the terminal, you can `git clone <link to your repo>`
+To work in your project, you will need to `cd` into the new folder that git creates. 
+You will need to run `npm install` to get all the packages installed, and then Node will be all setup.
+In order to run mongo, follow [these instructions](https://docs.c9.io/docs/setting-up-mongodb). 
+Now c9 is setup, and ready for you to hack away. 
+
 More Instructions Coming Soon...
 
 ####Development
